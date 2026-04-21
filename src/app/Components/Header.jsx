@@ -2,6 +2,7 @@
 import React from "react";
 import Navlink from "./Navlink";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const navItems = () => {
@@ -10,13 +11,16 @@ const Header = () => {
         <li>
           <button className="text-stone-600 font-bold border shadow px-4 py-2 rounded-full hover:bg-lime-200 duration-200 transition-all cursor-pointer">
             {" "}
-            <Navlink href={`/foods`}> Food </Navlink>{" "}
+            <Link prefetch={false} href={`/foods`}>
+              {" "}
+              Food{" "}
+            </Link>{" "}
           </button>
         </li>
         <li>
           <button className="text-stone-600 font-bold border shadow px-4 py-2 rounded-full hover:bg-lime-200 duration-200 transition-all cursor-pointer">
             {" "}
-            <Navlink href={`/reviews`}> Review </Navlink>{" "}
+            <Link href={`/reviews`}> Review </Link>{" "}
           </button>
         </li>
       </div>

@@ -39,7 +39,7 @@ const FoodPage = async ({ searchParams }) => {
             );
           })}
         </div>
-        <div className="border-2 w-[300px] rounded-xl py-4 px-2">
+        <div className="border-2 w-75 rounded-xl py-4 px-2">
           <h2 className="text-xl font-bold text-white pb-1 border-b-2 border-white">
             {" "}
             Cart Items

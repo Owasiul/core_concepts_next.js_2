@@ -1,10 +1,16 @@
+import { Anek_Bangla } from "next/font/google";
+import Image from "next/image";
 import React from "react";
+
+const anik_Bangla = Anek_Bangla({
+  weight: ["400"],
+});
 
 const ReviewCard = ({ review }) => {
   const data = review;
 
   return (
-    <div>
+    <div className={`${anik_Bangla.className}`}>
       <div
         key={review.id}
         className="flex flex-col w-96 h-full bg-white rounded-xl shadow-md border border-gray-100 p-6 transition-all hover:shadow-lg"
@@ -12,10 +18,12 @@ const ReviewCard = ({ review }) => {
         {/* Header: Profile & Rating */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <img
+            <Image
+              height={50}
+              width={50}
               src={data.photo}
               alt={data.user}
-              className="h-12 w-12 rounded-full object-cover border-2 border-orange-100"
+              className="rounded-full object-cover border-2 border-orange-100"
             />
             <div>
               <h3 className="font-bold text-gray-900 leading-none">

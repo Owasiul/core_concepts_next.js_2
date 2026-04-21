@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "./Components/Header";
 import CartProvider from "./context/CartProvider";
@@ -21,13 +21,18 @@ export const metadata = {
   description: "Best kitchen in your area",
 };
 
+const popins = Poppins({
+  weight: ["400", "500", "800", "900"],
+  subsets: ["latin"],
+});
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full w-full flex flex-col">
+      <body className={`${popins.className} min-h-full w-full flex flex-col`}>
         <Header></Header>
         <main className="">
           <CartProvider>{children}</CartProvider>

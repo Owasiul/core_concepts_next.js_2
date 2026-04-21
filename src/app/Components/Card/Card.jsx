@@ -10,17 +10,14 @@ const RecipeCard = ({ foodData }) => {
   return (
     <div className="lg:max-w-96 w-full mx-auto overflow-hidden rounded-2xl bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100">
       {/* Image Section */}
-      <div className="relative h-56 w-full group">
-        <img
+      <div className="relative h-56 w-full overflow-hidden group">
+        <Image
+          fill
           src={foodImg}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute top-4 right-4">
-          <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange-600 shadow-sm backdrop-blur-sm">
-            {category}
-          </span>
-        </div>
       </div>
 
       {/* Content Section */}

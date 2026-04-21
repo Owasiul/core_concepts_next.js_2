@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export async function generateMetadata({ params }) {
@@ -46,14 +47,18 @@ const PageDetails = async ({ params }) => {
     <div className="max-w-5xl mx-auto p-6 min-h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         {/* Food Image */}
-        <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-          <img
+        <div className="relative h-80 w-full overflow-hidden group rounded-xl">
+          <Image
+            fill
             src={food.foodImg}
-            alt={food.title}
-            className="w-full h-100 object-cover transition-transform hover:scale-105 duration-300"
+            alt={`Photo of ${food.title}`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+            loading="lazy"
           />
         </div>
-
         {/* Food Info */}
         <div className="space-y-6">
           <div>
