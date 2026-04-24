@@ -33,10 +33,10 @@ const Header = () => {
         <Navlink href={`/`}>
           {/* <img src="" alt=""  /> */}
           <Image
-            width={100}
-            height={150}
             src="/Logo.png"
-            className="object-contain"
+            width={100}
+            height={0}
+            style={{ height: "auto", objectFit: "contain" }}
             alt="logo"
           />
         </Navlink>
