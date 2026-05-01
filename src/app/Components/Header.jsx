@@ -23,6 +23,12 @@ const Header = () => {
             <Link href={`/reviews`}> Review </Link>{" "}
           </button>
         </li>
+        <li>
+          <button className="text-stone-600 font-bold border shadow px-4 py-2 rounded-full hover:bg-lime-200 duration-200 transition-all cursor-pointer">
+            {" "}
+            <Link href={`/feedback`}> Feedbacks </Link>{" "}
+          </button>
+        </li>
       </div>
     );
   };

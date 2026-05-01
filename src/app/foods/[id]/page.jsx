@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import React from "react";
 
 export async function generateMetadata({ params }) {
@@ -30,14 +31,15 @@ const PageDetails = async ({ params }) => {
   const { id } = await params;
   const food = await getFoodDetails(id);
 
-  if (!food) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <h1 className="text-xl text-purple-700 font-bold">
-          No Food Data Found
-        </h1>
-      </div>
-    );
+  if (!food.title) {
+    redirect("/foods");
+    // return (
+    //   <div className="flex justify-center items-center min-h-screen">
+    //     <h1 className="text-xl text-purple-700 font-bold">
+    //      ! No Food Data Found
+    //     </h1>
+    //   </div>
+    // );
   }
 
   // Convert YouTube URL to Embed format
